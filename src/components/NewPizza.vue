@@ -69,16 +69,19 @@
                     ]
                 }
                 // axios vue-resource
-                fetch("https://wd6774888403aqsjiu.wilddogio.com/menu.json",{
-                    method:"POST",
-                    headers:{
-                        "Content-type":'application/json'
-                    },
-                    body:JSON.stringify(data)
-                })
-                .then(res => res.json())
-                .then(data => this.$router.push({name:menulink}))
-                .catch(err => console.log(err))
+                // fetch("https://wd6774888403aqsjiu.wilddogio.com/menu.json",{
+                //     method:"POST",
+                //     headers:{
+                //         "Content-type":'application/json'
+                //     },
+                //     body:JSON.stringify(data)
+                // })
+                // .then(res => res.json())
+                // .then(data => this.$router.push({name:menulink}))
+                // .catch(err => console.log(err))
+
+                this.http.post("menu.json",data)
+                .then(res => this.$router.push({name:menulink}))
             }
         }
     }
